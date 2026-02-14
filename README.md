@@ -1,47 +1,103 @@
-# Getting Started with Create React App
+# Smart Expense Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern expense tracking application built with React and TypeScript, featuring AI-powered financial insights.
+
+![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.9-3178C6?logo=typescript&logoColor=white)
+![Chakra UI](https://img.shields.io/badge/Chakra%20UI-3.32-319795?logo=chakraui&logoColor=white)
+
+## Features
+
+- **Expense Management** - Add, view, and delete expenses with descriptions and categories
+- **Budget Tracking** - Set monthly budgets and track spending with visual progress indicators
+- **Smart Filtering** - Filter expenses by category, date range, or search by description
+- **Analytics Dashboard** - Visualize spending patterns with interactive pie and bar charts
+- **AI Insights** - Get personalized financial recommendations powered by Google Gemini AI
+- **Persistent Storage** - All data is saved locally in your browser
+
+## Tech Stack
+
+- **Frontend:** React 19, TypeScript
+- **UI Library:** Chakra UI
+- **State Management:** Zustand
+- **Charts:** Recharts
+- **AI:** Google Gemini API
+- **Routing:** React Router v7
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/kqlzd/smart-expense-tracker.git
+   cd smart-expense-tracker
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Start the development server
+   ```bash
+   npm start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+|---------|-------------|
+| `npm start` | Run development server |
+| `npm run build` | Build for production |
+| `npm test` | Run tests |
 
-### `npm start`
+## Project Structure
 
-kqlzd
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+src/
+├── components/       # Reusable UI components
+├── consts/          # Constants and configuration
+├── hooks/           # Custom React hooks
+│   ├── useAiInsights.ts    # AI integration hook
+│   └── useLocalStorage.ts  # Local storage persistence
+├── pages/           # Page components
+│   ├── HomePage/    # Main dashboard
+│   ├── Expenses/    # Expense list with filters
+│   └── Analytics/   # Charts and AI insights
+├── routes/          # Route configuration
+├── store/           # Zustand state management
+└── types/           # TypeScript type definitions
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+### Dashboard
+Track your monthly spending at a glance with budget progress indicators.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Analytics
+Visualize your expenses with interactive charts and get AI-powered recommendations.
 
-### `npm run build`
+## Categories
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app includes predefined expense categories:
+- Market (Groceries)
+- Nəqliyyat (Transportation)
+- Alış-veriş (Shopping)
+- Əyləncə (Entertainment)
+- Restoran (Restaurant)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## License
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project is open source and available under the [MIT License](LICENSE).
 
-### `npm run eject`
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Kanan Guluzade** - [@kqlzd](https://github.com/kqlzd)

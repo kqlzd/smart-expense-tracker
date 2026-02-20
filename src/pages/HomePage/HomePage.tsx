@@ -13,14 +13,10 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { CATEGORIES } from "../../consts/consts";
-import { useNavigate } from "react-router-dom";
-
 import { useGetExpenses } from "../../store";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export const HomePage = () => {
-  const navigate = useNavigate();
-
   const [expense, setExpense] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<string>("");
@@ -275,25 +271,6 @@ export const HomePage = () => {
             )}
           </Card.Body>
         </Card.Root>
-
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
-          <Button
-            size="lg"
-            colorScheme="purple"
-            variant="outline"
-            onClick={() => navigate("/analytics")}
-          >
-            📊 Analitika
-          </Button>
-          <Button
-            size="lg"
-            colorScheme="teal"
-            variant="outline"
-            onClick={() => navigate("/expenses")}
-          >
-            📋 Bütün Xərclər
-          </Button>
-        </SimpleGrid>
       </Box>
     </Box>
   );

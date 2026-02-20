@@ -1,13 +1,12 @@
 import { RouteObject } from "react-router-dom";
-
-import { HomePage } from "../pages/HomePage/HomePage";
-import { Analytics } from "../pages/Analytics/Analytics";
-import { Expense } from "../pages/Expenses/Expense";
-import { StatsCards } from "../components/StatsCards/StatsCards";
+import { HomePage, Expense, Analytics, StatsCards } from ".";
+import { Layout } from "../components/Layout/Layout";
+import { CsvExport } from "../pages/CsvExport/CsvExport";
 
 export const ExpenseRoutes: RouteObject[] = [
   {
     path: "/",
+    element: <Layout />,
     children: [
       {
         index: true,
@@ -24,6 +23,10 @@ export const ExpenseRoutes: RouteObject[] = [
       {
         path: "stats",
         element: <StatsCards />,
+      },
+      {
+        path: "csv",
+        element: <CsvExport />,
       },
     ],
   },

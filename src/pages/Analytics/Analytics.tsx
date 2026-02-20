@@ -24,6 +24,7 @@ import {
 } from "recharts";
 import { useGetExpenses } from "../../store/index";
 import { useAIInsights } from "../../hooks/useAiInsights";
+import { COLORS } from "../../consts/consts";
 
 export const Analytics = () => {
   const navigate = useNavigate();
@@ -49,16 +50,6 @@ export const Analytics = () => {
 
   const categoryData = getCategoryData();
   const totalSpent = expenses.reduce((sum, exp) => sum + exp.amount, 0);
-
-  const COLORS: readonly string[] = [
-    "#14B8A6",
-    "#8B5CF6",
-    "#F59E0B",
-    "#EF4444",
-    "#3B82F6",
-    "#10B981",
-    "#EC4899",
-  ] as const;
 
   return (
     <Box
@@ -156,7 +147,7 @@ export const Analytics = () => {
                       cy="50%"
                       labelLine={false}
                       label={({ name, percent }) =>
-                        `${name}: ${(percent * 100).toFixed(0)}%`
+                        `${name}: ${(Number(percent) * 100).toFixed(0)}%`
                       }
                       outerRadius={110}
                       innerRadius={60}

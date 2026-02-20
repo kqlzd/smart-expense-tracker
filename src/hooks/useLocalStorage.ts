@@ -1,26 +1,31 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useGetExpenses } from "../store";
-import { STORAGE_KEY } from "../consts/consts";
+import { GOALS_KEY, STORAGE_KEY } from "../consts/consts";
 
 export const useLocalStorage = () => {
-  const { expenses, setExpenses } = useGetExpenses();
+  const { expenses, setExpenses, goals, setGoals } = useGetExpenses();
 
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
+    const savedExpenses = localStorage.getItem(STORAGE_KEY);
+    if (savedExpenses) {
       try {
-        const data = JSON.parse(saved);
-        setExpenses(data);
-      } catch (error) {
-        console.error("localStorage parse error:", error);
-      }
+        setExpenses(JSON.parse(savedExpenses));
+      } catch {}
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    const savedGoals = localStorage.getItem(GOALS_KEY);
+    if (savedGoals) {
+      try {
+        setGoals(JSON.parse(savedGoals));
+      } catch {}
+    }
   }, []);
 
   useEffect(() => {
     if (expenses.length > 0) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(expenses));
+      localStorage.setItem(GOALS_KEY, JSON.stringify(goals));
     }
-  }, [expenses]);
+  }, [expenses, goals]);
 };
